@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import Toggle from './Toggle';
+import Nav from './Nav';
+import Checkout from './Checkout';
 import logo from './logo.svg';
 import './App.css';
 
 const App = () => {
-  const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
+  const [isNavOpen, setNavOpen] = useState(false);
+  const fade = useSpring({
+    from: {
+      opacity: 0
+    },
+    opacity: 1
+  });
   return (
     <animated.div className='App' style={fade}>
       <header className='App-header'>
         <img src={logo} className='logo' />
-        <button className='menu-button'>Menu</button>
+        <button onClick={() => setNavOpen(!isNavOpen)} className='menu-button'>
+          Menu
+        </button>
+        {/* <Nav style={navAnimation} /> */}
       </header>
       <main>
         <Toggle />
+        <Checkout isOpen={isNavOpen} />
       </main>
     </animated.div>
   );
