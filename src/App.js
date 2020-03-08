@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import Modal from './Modal';
 import Checkout from './Checkout';
-import Guesture from './Guesture';
+import Gesture from './Gesture';
 import Accordion from './Accordion';
-import Waypoints from './Waypoints';
+// import Waypoints from './Waypoints';
 import logo from './logo.svg';
 import './App.css';
 
@@ -28,9 +28,7 @@ const App = () => {
       <main>
         <Modal />
         <Accordion />
-        <Guesture />
-        <div className='box' />
-        <Waypoints />
+        <Gesture />
       </main>
       <Checkout isOpen={isNavOpen} />
     </animated.div>
