@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import Nav from './Nav';
 import Modal from './Modal';
 import Checkout from './Checkout';
+import Guesture from './Guesture';
+import Accordion from './Accordion';
+import Waypoints from './Waypoints';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,7 +19,7 @@ const App = () => {
   return (
     <animated.div className='App' style={fade}>
       <header className='App-header'>
-        <img src={logo} className='logo' />
+        <img src={logo} className='logo' alt='logo' />
         <button onClick={() => setNavOpen(!isNavOpen)} className='menu-button'>
           Menu
         </button>
@@ -25,6 +27,10 @@ const App = () => {
       </header>
       <main>
         <Modal />
+        <Accordion />
+        <Guesture />
+        <div className='box' />
+        <Waypoints />
       </main>
       <Checkout isOpen={isNavOpen} />
     </animated.div>
